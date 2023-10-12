@@ -1,0 +1,418 @@
+/* Estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gabarito', cursive;
+  }
+  
+  body {
+    background-color: #000;
+  }
+  
+  .Interface {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .flex {
+    display: flex;
+    margin-top: 60px;
+  }
+  
+  .btn-contato button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #00FF08;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+  h2.titulo {
+    color: #FFF;
+    font-size: 38px;
+    text-align: center;
+  }
+  
+  h2.titulo span {
+    color: #00FF08;
+  }
+  
+  /* Estilo do cabeçalho */
+  header {
+    padding: 40px 4%;
+  }
+  
+  header > .Interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  header a {
+    color: #7D7D7D;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+  }
+  
+  header a:hover {
+    color: #FFF;
+    transform: scale(1.05);
+  }
+  
+  header nav ul {
+    list-style-type: none;
+  }
+  
+  header nav ul li {
+    display: inline-block;
+    padding: 0 40px;
+  }
+  
+  .btn-contato button:hover {
+    box-shadow: 0 0 8px #f8f8f8;
+  }
+  
+  /* Estilo do topo do site */
+  section.topo-do-site {
+    padding: 40px 4%;
+  }
+  
+  section.topo-do-site .flex {
+    align-items: center;
+    align-content: center;
+    gap: 90px;
+  }
+  
+  .topo-do-site h1 {
+    color: #ffff;
+    font-size: 42px;
+    line-height: 40px;
+  }
+  
+  .topo-do-site .txt-topo-site h1 span {
+    color: #00FF08;
+  }
+  
+  .topo-do-site .txt-topo-site p {
+    color: #ffff;
+    margin: 40px 0;
+  }
+  
+  /* Estilo das especialidades */
+  section.especialidade {
+    padding: 40px 4%;
+  }
+  
+  section.especialidade .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .especialidade .especialidade-box {
+    color: #FFF;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: 0.2s;
+    text-align: center;
+    width: calc(33.33% - 20px);
+  }
+  
+  .especialidade .especialidade-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px #FFF;
+  }
+  
+  .especialidade .flex img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .especialidade .especialidade-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+  }
+  
+  /* Estilo do sobre */
+  section.sobre-mim {
+    padding: 80px 4%;
+  }
+  
+  section.sobre-mim .flex {
+    align-items: center;
+    gap: 60px;
+  }
+  
+  .sobre-mim .txt-sobre {
+    color: #FFF;
+  }
+  
+  .sobre-mim .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+  
+  .sobre-mim .txt-sobre h2 span {
+    color: #00FF08;
+    display: block;
+  }
+  
+  .sobre-mim .txt-sobre p {
+    margin: 20px 0;
+    text-align: justify;
+  }
+  
+  .btn-social img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    line-height: 100px;
+    border: none;
+    margin: 10px;
+    margin: 0 auto;
+  }
+  
+  .btn-social img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 8px #FFF;
+    transition: 0.2s;
+  }
+  
+  /* Estilo do portfólio */
+  section.portfolio {
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px #ffffff1d;
+  }
+  
+  section.portfolio .flex {
+    justify-content: space-around;
+  }
+  
+  .img-port {
+    width: 360px;
+    height: 460px;
+    background-size: cover;
+    background-position: 100% 0%;
+    transition: 8s;
+    cursor: pointer;
+    border-radius: 40px;
+  }
+  
+  .img-port:hover {
+    background-position: 100% 100%;
+  }
+  
+  /* Estilo do formulário de contato */
+  section.formulario {
+    padding: 80px 4%;
+  }
+  
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    background-color: #202020;
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: #FFF;
+    font-size: 18px;
+  }
+  
+  form textarea {
+    resize: none;
+    max-height: 200px;
+  }
+  
+  form .btn-enviar {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  form .btn-enviar input {
+    width: 120px;
+    background-color: #00FF08;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .btn-enviar input:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px #FFF;
+    transition: 0.2s;
+  }
+  
+  /* Estilo do rodapé */
+  footer {
+    padding: 60px 4%;
+    box-shadow: 0 0 40px 10px #ffffff1d;
+  }
+  
+  footer .flex {
+    justify-content: space-between;
+    flex-direction: row; /* Ajustado para dispositivos maiores */
+  }
+  
+  footer .line-footer {
+    padding: 20px 0;
+    border-bottom: 2px #00FF08;
+  }
+  
+  footer .line-footer p img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    line-height: 100px;
+    border: none;
+    margin: 10px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  footer .line-footer p a {
+    color: #FFF;
+  }
+  
+  
+
+  /* Estilo geral */
+/* ... (seu CSS existente) ... */
+
+/* Estilos para telas menores (tablets e smartphones) */
+@media screen and (max-width: 767px) {
+    body {
+      font-size: 14px; /* Reduza o tamanho da fonte para telas menores */
+    }
+  
+    .Interface {
+      padding: 0 10px; /* Reduza o padding para telas menores */
+    }
+  
+    /* Estilo do cabeçalho para telas menores */
+    header {
+      padding: 20px 4%;
+    }
+  
+    header nav ul li {
+      padding: 0 10px; /* Reduza o espaçamento dos itens do menu para telas menores */
+    }
+  
+    .btn-contato button {
+      font-size: 16px; /* Reduza o tamanho do botão para telas menores */
+    }
+
+    
+  
+    /* Estilo das especialidades para telas menores */
+    section.especialidade .especialidade-box {
+      padding: 20px; /* Reduza o padding das caixas de especialidades */
+      width: calc(50% - 20px); /* Faça duas colunas em vez de três para telas menores */
+    }
+  
+    /* Estilo do sobre para telas menores */
+    section.sobre-mim {
+        padding: 40px 4%; /* Reduza o preenchimento da seção para telas menores */
+      }
+    
+      section.sobre-mim .flex {
+        flex-direction: column; /* Alinhe os elementos verticalmente em telas menores */
+        gap: 20px;
+        text-align: center;
+      }
+    
+      .sobre-mim .txt-sobre h2 {
+        font-size: 32px; /* Reduza o tamanho da fonte do título para telas menores */
+        margin-bottom: 20px; /* Reduza a margem inferior do título para telas menores */
+      }
+    
+      .sobre-mim .txt-sobre p {
+        margin: 10px 0; /* Reduza a margem do parágrafo para telas menores */
+      }
+    
+  
+    .btn-social img {
+      width: 40px; /* Reduza o tamanho dos ícones sociais para telas menores */
+      height: 40px;
+    }
+  
+    /* Estilo do portfólio para telas menores */
+    section.portfolio {
+        padding: 40px 4%; /* Reduza o preenchimento da seção para telas menores */
+      }
+    
+      section.portfolio .flex {
+        flex-direction: column; /* Alinhe os elementos verticalmente em telas menores */
+        gap: 20px;
+        text-align: center;
+      }
+    
+      .img-port {
+        width: 100%; /* Faça as imagens ocuparem 100% da largura para telas menores */
+        height: 300px; /* Ajuste a altura das imagens para telas menores */
+        border-radius: 20px; /* Reduza o raio do border-radius para telas menores */
+      }
+    
+      .img-port:hover {
+        background-position: 100% 100%;
+      }
+    
+      section.topo-do-site {
+        padding: 20px 4%; /* Reduza o preenchimento da seção para telas menores */
+      }
+    
+      section.topo-do-site .flex {
+        flex-direction: column; /* Alinhe os elementos verticalmente em telas menores */
+        gap: 20px;
+        text-align: center;
+      }
+    
+      .topo-do-site h1 {
+        font-size: 28px; /* Reduza o tamanho da fonte para telas menores */
+      }
+    
+      .topo-do-site .txt-topo-site h1 span {
+        font-size: 20px; /* Reduza o tamanho do span para telas menores */
+      }
+    
+      .topo-do-site .txt-topo-site p {
+        margin: 20px 0; /* Reduza a margem para telas menores */
+      }
+  
+    /* Estilo do formulário de contato para telas menores */
+    section.formulario form {
+      max-width: 100%; /* Faça o formulário ocupar toda a largura da tela */
+    }
+  
+    /* Estilo do rodapé para telas menores */
+    footer .flex {
+      flex-direction: column; /* Altere a direção dos itens para coluna em telas menores */
+    }
+  
+    footer .line-footer p img {
+      width: 40px; /* Reduza o tamanho dos ícones sociais no rodapé */
+      height: 40px;
+    }
+  
+  
+}

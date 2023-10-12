@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jogo da Velha</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #000000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 10px 0;
+      color: #15ff00; /* Cor do título */
+    }
+
+    .game-container {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      gap: 2px;
+      background-color: #2b2a2a; /* Cor de fundo do tabuleiro */
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .cell {
+      width: 100px;
+      height: 100px;
+      font-size: 48px;
+      text-align: center;
+      vertical-align: middle;
+      border: 2px solid #0aff02;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #fdfdfd; /* Cor das células */
+    }
+
+    .cell:hover {
+      background-color: #287e13fa; /* Cor de fundo ao passar o mouse */
+    }
+
+    .cell.win {
+      background-color: #ddda0c; /* Cor de fundo quando alguém ganha */
+      color: #fff; /* Cor do texto quando alguém ganha */
+    }
+
+    .cell.disabled {
+      cursor: not-allowed;
+    }
+
+    #player-score {
+      font-size: 20px;
+      margin: 10px 0;
+      color: #fff;
+    }
+
+    .restart-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #00ff08; /* Cor do botão de reiniciar */
+      color: #000000; /* Cor do texto do botão de reiniciar */
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .victory-message {
+      display: none;
+      font-size: 24px;
+      color: #4CAF50; /* Cor da mensagem de vitória */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Jogo da Velha</h1>
+    <div id="player-score">
+      Jogador X: <span id="player-x-score">0</span> - Jogador O: <span id="player-o-score">0</span>
+    </div>
+    <div class="game-container" id="game-container"></div>
+    <button class="restart-button" id="restart-button">Reiniciar</button>
+  </div>
+
+  <script>
+    const gameContainer = document.getElementById("game-container");
+    const cells = Array.from({ length: 9 }, (_, index) => createCell(index));
+    const restartButton = document.getElementById("restart-button");
+    const playerXScoreElement = document.getElementById("player-x-score");
+    const playerOScoreElement = document.getElementById("player-o-score");
+
+    let currentPlayer = "X";
+    let gameOver = false;
+    let board = ["", "", "", "", "", "", "", "", ""];
+    let playerXScore = 0;
+    let playerOScore = 0;
+
+    gameContainer.append(...cells);
+
+    restartButton.addEventListener("click", restartGame);
+
+    function createCell(index) {
+      const cell = document.createElement("div");
+      cell.classList.add("cell");
+      cell.dataset.index = index;
+      cell.addEventListener("click", () => makeMove(index));
+      return cell;
+    }
+
+    function makeMove(cellIndex) {
+      if (!gameOver && board[cellIndex] === "") {
+        board[cellIndex] = currentPlayer;
+        cells[cellIndex].textContent = currentPlayer;
+        cells[cellIndex].classList.add("disabled");
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
+        checkWin();
+      }
+    }
+
+
+    function checkWin() {
+      const winPatterns = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+      ];
+
+      for (const pattern of winPatterns) {
+        const [a, b, c] = pattern;
+        if (board[a] && board[a] === board[b] && board[b] === board[c]) {
+          cells[a].classList.add("win");
+          cells[b].classList.add("win");
+          cells[c].classList.add("win");
+          updateScore(board[a]);
+          gameOver = true;
+          return;
+        }
+      }
+
+      if (board.every((cell) => cell !== "")) {
+        gameOver = true;
+      }
+    }
+
+    function updateScore(winner) {
+      if (winner === "X") {
+        playerXScore++;
+        playerXScoreElement.textContent = playerXScore;
+      } else {
+        playerOScore++;
+        playerOScoreElement.textContent = playerOScore;
+      }
+    }
+
+    function restartGame() {
+      board = ["", "", "", "", "", "", "", "", ""];
+      cells.forEach((cell) => {
+        cell.textContent = "";
+        cell.classList.remove("disabled", "win");
+      });
+      currentPlayer = "X";
+      gameOver = false;
+    }
+
+    function displayVictoryMessage(winner) {
+      const victoryMessage = document.getElementById("victory-message");
+      victoryMessage.textContent = `Jogador ${winner} venceu!`;
+      victoryMessage.style.display = "block";
+    }
+  </script>
+</body>
+</html>

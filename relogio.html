@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Relógio Analógico</title> <!-- Alteração do título aqui -->
+    <style>
+      .base {
+        background-color: #8822ff;
+        width: 400px;
+        height: 400px;
+        border-radius: 400px;
+        position: relative;
+        background-image: linear-gradient(#A46FDE, #7437BB);
+        box-shadow: 5px 5px 20px #555;
+      }
+
+      .base .base-ponteiro {
+        width: 400px;
+        position: absolute;
+        top: 50%;
+        height: 2px;
+        margin-top: -1px;
+        transition: transform 1s;
+        -webkit-transition: transform 1s;
+      }
+
+      .ponteiro-segundos > div {
+        background-color: #FF5733; /* Cor para o ponteiro de segundos */
+        height: 6px;
+        width: 180px;
+        margin-left: 20px;
+        margin-top: -3px;
+        border-radius: 6px;
+        box-shadow: 1px 1px 15px #333;
+        transform-origin: 5px 50%;
+      }
+
+      .ponteiro-minutos > div {
+        background-color: #338DFF; /* Cor para o ponteiro de minutos */
+        height: 6px;
+        width: 150px;
+        margin-left: 30px;
+        margin-top: -3px;
+        border-radius: 6px;
+        box-shadow: 1px 1px 15px #333;
+        transform-origin: 5px 50%;
+      }
+
+      .ponteiro-horas > div {
+        background-color: #33FF5C; /* Cor para o ponteiro de horas */
+        height: 6px;
+        width: 100px;
+        margin-left: 50px;
+        margin-top: -3px;
+        border-radius: 6px;
+        box-shadow: 1px 1px 15px #333;
+        transform-origin: 5px 50%;
+      }
+
+      figure.relogio {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      h1{
+        color: #33FF5C;
+        text-align: center;
+      }
+
+      body{
+        background-color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Relógio Analógico</h1> <!-- Título adicionado aqui -->
+    <figure class="relogio">
+      <div class="base">
+        <div id="ph" class="base-ponteiro ponteiro-horas">
+          <div></div>
+        </div>
+        <div id="pm" class="base-ponteiro ponteiro-minutos">
+
+          <div></div>
+        </div>
+        <div id="ps" class="base-ponteiro ponteiro-segundos">
+          <div></div>
+        </div>
+        <div class="decorador"></div>
+      </div>
+    </figure>
+    <script>
+      function rotateClockHands() {
+        var d = new Date();
+        var seconds = d.getSeconds();
+        var minutes = d.getMinutes();
+        var hours = d.getHours() % 12;
+
+        var secondsDegree = (seconds / 60) * 360;
+        var minutesDegree = (minutes / 60) * 360 + (seconds / 60) * 6;
+        var hoursDegree = (hours / 12) * 360 + (minutes / 60) * 30;
+
+        document.getElementById("ps").style.transform = `rotate(${secondsDegree}deg)`;
+        document.getElementById("pm").style.transform = `rotate(${minutesDegree}deg)`;
+        document.getElementById("ph").style.transform = `rotate(${hoursDegree}deg)`;
+      }
+
+      rotateClockHands();
+      setInterval(rotateClockHands, 1000);
+    </script>
+  </body>
+</html>
