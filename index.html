@@ -12,7 +12,7 @@
 
     <!--FIM GOOLE FONTS-->
     <link rel="stylesheet" href="style.css"> <!-- Importação de um arquivo CSS externo chamado "style.css" -->
-    <title>Portfólio pessoal</title>
+    <title>Portfólio-Wesley-Rodrigues</title>
 </head>
 <body>
     
@@ -69,7 +69,7 @@
                         <div class="btn-social">
                             <a href="https://www.instagram.com/wrgwesley/" target="_blank"><img src="imagens/instagram.png" alt="instagram"></a>
                             <a href="https://www.linkedin.com/in/wesley-rodrigues-gama-008994190/" target="_blank"><img src="imagens/linkedin.png" alt="linkedin"></a>
-                            <a href="https://github.com/WesleyRodrigues1/Iniciando-em-Python" target="_blank"><img src="imagens/GitHub-Mark.png" alt="github"></a>
+                            <a href="https://github.com/WesleyRodrigues1" target="_blank"><img src="imagens/GitHub.png" alt="github"></a>
                         </div><!--btn-social--> 
 
                     </div><!--txt-sobre--> 
@@ -79,9 +79,6 @@
             </div><!--interface--> 
 
         </section> <!--sobre-mim--> 
-
-
-
        
         <!-- Seção "Habilidades" -->
         <section class="especialidade" id="habilidade"> 
@@ -139,12 +136,15 @@
                             requerem armazenamento de dados confiável.</p>
                     </div> <!--especialidade-box-->
                     <div class="especialidade-box">
-                        <img src="imagens/angular.png" alt="">
-                        <h3>ANGULAR</h3>
-                        <p>Angular é um framework de desenvolvimento front-end de código aberto 
-                            desenvolvido pelo Google. Ele é usado para criar aplicativos web dinâmicos e interativos. 
-                            O Angular utiliza a linguagem TypeScript, que é uma superset do JavaScript, e segue o modelo 
-                            de design de arquitetura Modelo-Visão-Controlador (MVC)..</p>
+                        <img src="imagens/GitHub-Mark.png" alt="">
+                        <h3>GITHUB</h3>
+                        <p>O GitHub é uma plataforma de hospedagem de código-fonte e colaboração de 
+                        desenvolvimento de software. Ele fornece uma maneira para os desenvolvedores 
+                        armazenarem, compartilharem e colaborarem em projetos de software. O GitHub é 
+                        baseado no sistema de controle de versão Git, que é amplamente usado na indústria d
+                        e desenvolvimento de software.
+
+                        </p>
                     </div> <!--especialidade-box-->
 
                     
@@ -176,31 +176,48 @@
 
         <section class="portfolio" id="portfolio">
             <div class="interface">
-                <h2 class="titulo"> MEU <SPAn>PORTIFÓLIO.</SPAn> </h2>
+                <h2 class="titulo">MEU <span>PORTFÓLIO.</span></h2>
                 <div class="flex">
                     <a href="calculadora.html">
-                        <div class="img-port" style="background-image: url(imagens/imagem1.png); "> </div></a>
-                        
+                        <div class="img-port" style="background-image: url(imagens/imagem1.png);">
+                            <div class="text-container">
+                                <h3>Calculadora</h3>
+                                <p>Desenvolvimento com JavaScript, CSS e HTML.</p>
+                            </div>
+                        </div>
+                    </a>
                     <a href="relogio.html">
-                        <div class="img-port" style="background-image: url(imagens/relogio.png);"></div></a>
+                        <div class="img-port" style="background-image: url(imagens/relogio.png);">
+                            <div class="text-container">
+                                <h3>Relógio</h3>
+                                <p>Desenvolvimento com JavaScript, CSS e HTML.</p>
+                            </div>
+                        </div>
+                    </a>
                     <a href="jogovelha.html">
-                        <div class="img-port" style="background-image: url(imagens/velha.png);"></div></a>
-                      
-                    
-
-                </div> <!--flex-->
-
-            </div><!--interface--> 
-        </section><!--Portfolio--> 
+                        <div class="img-port" style="background-image: url(imagens/velha.png);">
+                            <div class="text-container">
+                                <h3>Jogo da Velha</h3>
+                                <p>Desenvolvimento com JavaScript, CSS e HTML.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div> <!-- flex -->
+            </div><!-- interface -->
+        </section><!-- Portfolio -->
+        
+        
         <!-- Formulário onde os visitantes podem entrar em contato com você -->
         <section class="formulario">
             <div class="interface">
                 <h2 class="titulo" id="titulo"> FALA <SPAn>COMIGO.</SPAn> </h2>
-                <form action="">
-                    <input type="text" name="" id="" placeholder="Seu nome completo:" required>
-                    <input type="text" name="" id="" placeholder="Seu e-mail:" required>
+                <form action="https://formsubmit.co/wesleyrodriguesgama1@gmail.com" method="POST">
+                    <input type="text" name="name" id="" placeholder="Seu nome completo:" required>
+                    <input type="text" name="email" id="" placeholder="Seu e-mail:" required>
                     <input type="text" name="" id="" placeholder="Seu celular:">
-                    <textarea name="" id=""  placeholder="Sua mensagem" required></textarea>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://portfoliowesleyrodrigues.netlify.app/obrigado.html">
+                    <textarea name="message" id=""  placeholder="Sua mensagem" required></textarea>
                     <div class="btn-enviar">
                         <input type="submit" value="ENVIAR">
 
@@ -215,31 +232,8 @@
     </main>
 
     <footer>
-        <div class="interface">
-                <div class="line-footer">
-                    <div class="flex">               
-                        <div class="btn-social">
-                            <a href="https://www.instagram.com/wrgwesley/" target="_blank"><img src="imagens/instagram.png" alt="instagram"></a>
-                            <a href="https://www.linkedin.com/in/wesley-rodrigues-gama-008994190/" target="_blank"><img src="imagens/linkedin.png" alt="linkedin"></a>
-                            <a href="https://github.com/WesleyRodrigues1/Iniciando-em-Python" target="_blank"><img src="imagens/GitHub-Mark.png" alt="github"></a>
-                        </div><!--btn-social--> 
-
-                        <div class="line-footer">
-                            <p> 
-                                <a href=""></a>
-                                <img src="imagens/email.png" alt=""> <a href="mailto:wesleyrodrigues1@gmail.com">wesleyrodrigues1@gmail.com</a>
-                                
-                            </p>
-                    </div>
-
-                    </div><!--line-footer--> 
-            </div><!--line-footer--> 
-
-        </div> <!--interface--> 
-    </footer>
-
-    
-
-
+        <p>&copy; 2023 - Wesley Rodrigues</p>
+        <p>Entre em contato pelo e-mail: <a href="mailto:wesleyrodrigues1@gmail.com">wesleyrodrigues1@gmail.com</a></p>
+    </footer>               
 </body>
 </html>

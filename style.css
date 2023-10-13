@@ -191,13 +191,14 @@
   section.portfolio {
     padding: 80px 4%;
     box-shadow: 0 0 40px 10px #ffffff1d;
-  }
-  
-  section.portfolio .flex {
+}
+
+section.portfolio .flex {
     justify-content: space-around;
-  }
-  
-  .img-port {
+}
+
+.img-port {
+    position: relative; /* Adicione position relative para os elementos pai */
     width: 360px;
     height: 460px;
     background-size: cover;
@@ -205,11 +206,41 @@
     transition: 8s;
     cursor: pointer;
     border-radius: 40px;
-  }
-  
-  .img-port:hover {
+    text-align: center; /* Adicionado para centralizar o texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px 0; /* Espaçamento entre a imagem e o texto */
+}
+
+.img-port p,
+.img-port h3 {
+    margin: 0; /* Remova o espaço extra acima e abaixo do texto */
+    background: rgba(0, 0, 0, 0.7); /* Fundo escuro para o texto */
+    color: white; /* Cor do texto */
+    padding: 10px; /* Espaçamento interno do texto */
+    border-radius: 0 0 40px 40px; /* Cantos arredondados no fundo do texto */
+    transition: background-color 0.3s; /* Transição de fundo para suavizar as alterações */
+    position: relative; /* Adicione position relative para os elementos filho */
+    z-index: 1; /* Defina uma camada z para garantir que o texto fique acima da imagem */
+}
+
+.img-port h3{
+  color: #00FF08;
+}
+
+.img-port:hover {
     background-position: 100% 100%;
-  }
+}
+
+.img-port:hover p,
+.img-port:hover h3 {
+    background: rgba(0, 0, 0, 0.9); /* Alteração de fundo no hover */
+    z-index: 2; /* Aumente a camada z para que o texto fique sobreposto à imagem no hover */
+}
+
+
+
   
   /* Estilo do formulário de contato */
   section.formulario {
@@ -264,35 +295,18 @@
   
   /* Estilo do rodapé */
   footer {
-    padding: 60px 4%;
-    box-shadow: 0 0 40px 10px #ffffff1d;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
   }
-  
-  footer .flex {
-    justify-content: space-between;
-    flex-direction: row; /* Ajustado para dispositivos maiores */
-  }
-  
-  footer .line-footer {
-    padding: 20px 0;
-    border-bottom: 2px #00FF08;
-  }
-  
-  footer .line-footer p img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    line-height: 100px;
-    border: none;
-    margin: 10px;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  footer .line-footer p a {
-    color: #FFF;
-  }
+
+  a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: #FFF; /* Define a cor do texto para algo diferente do padrão de link */
+}
+
   
   
 
@@ -382,7 +396,7 @@
       }
     
       section.topo-do-site .flex {
-        flex-direction: column; /* Alinhe os elementos verticalmente em telas menores */
+        flex-direction: column-reverse; /* Alinhe os elementos verticalmente em telas menores */
         gap: 20px;
         text-align: center;
       }
