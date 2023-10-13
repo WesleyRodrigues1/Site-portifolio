@@ -240,7 +240,6 @@ section.portfolio .flex {
 }
 
 
-
   
   /* Estilo do formulário de contato */
   section.formulario {
@@ -307,11 +306,6 @@ section.portfolio .flex {
     color: #FFF; /* Define a cor do texto para algo diferente do padrão de link */
 }
 
-  
-  
-
-  /* Estilo geral */
-/* ... (seu CSS existente) ... */
 
 /* Estilos para telas menores (tablets e smartphones) */
 @media screen and (max-width: 767px) {
